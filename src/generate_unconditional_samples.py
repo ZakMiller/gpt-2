@@ -57,7 +57,7 @@ def sample_model(
 
         output = sample.sample_sequence(
             hparams=hparams, length=length,
-            start_token=enc.encoder['<|endoftext|>'],
+            start_token=enc.encode('<|endoftext|>')[0],
             batch_size=batch_size,
             temperature=temperature, top_k=top_k, top_p=top_p
         )[:, 1:]
